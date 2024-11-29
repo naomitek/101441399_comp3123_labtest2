@@ -1,26 +1,9 @@
-/* App.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('https://pixabay.com/photos/clouds-cumulus-sky-weather-8353592'); 
-  background-size: cover;
-  background-position: center;
-}
-
 .app {
+  font-family: Arial, sans-serif;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #2e3b4e;
+  color: white;
   padding: 20px;
-  width: 300px;
-}
-
-h1 {
-  color: #333;
 }
 
 form {
@@ -29,31 +12,15 @@ form {
 
 input {
   padding: 10px;
-  width: 80%;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-.weather-info {
-  margin-top: 20px;
-}
-
-.weather-info img {
-  width: 50px;
-  height: 50px;
-  margin: 10px 0;
+p {
+  margin: 5px 0;
 }

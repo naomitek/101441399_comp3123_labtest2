@@ -1,57 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import WeatherCard from './components/WeatherCard';
+import SearchBar from './components/SearchBar';
 
-function App() {
-  const [city, setCity] = useState('Toronto');
+const App = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [error, setError] = useState('');
+  const [city, setCity] = useState('Toronto');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchWeatherData = async () => {
+    const fetchWeather = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6bb6d8c969b86ed24ddf90d544223526`
         );
         setWeatherData(response.data);
+        setError(null);
       } catch (err) {
-        setError('City not found or API error');
+        setError("City not found.");
       }
+      setLoading(false);
     };
-    fetchWeatherData();
+
+    fetchWeather();
   }, [city]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setCity(e.target.city.value);
-  };
-
   return (
-    <div className="App">
-      <h1>Weather Forecast</h1>
-      <form onSubmit={handleSearch}>
-        <input type="text" name="city" placeholder="Enter city" />
-        <button type="submit">Search</button>
-      </form>
-      
-      {error && <div className="error">{error}</div>}
-
-      {weatherData && (
-        <div className="weather-info">
-          <h2>{weatherData.name}</h2>
-          <h3>{weatherData.weather[0].description}</h3>
-          <img
-            src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-            alt={weatherData.weather[0].description}
-          />
-          <p>Temperature: {Math.round(weatherData.main.temp - 273.15)}°C</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
-          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-        </div>
-      )}
+    <div className="app">
+      <h1>Weather App</h1>
+      <SearchBar setCity={setCity} />
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {weatherData && <WeatherCard weather={weatherData} />}
     </div>
   );
-}
+};
 
 export default App;
-

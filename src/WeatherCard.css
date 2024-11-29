@@ -1,0 +1,16 @@
+.weather-card {
+    display: flex;
+    justify-content: space-between;
+    background: #3c4b61;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .left-section {
+    text-align: left;
+  }
+  
+  .right-section {
+    text-align: right;
+  }
