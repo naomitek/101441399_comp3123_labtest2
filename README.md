@@ -19,7 +19,8 @@ You can replace the API key in the `App.js` file with your own from OpenWeatherM
 
 ## How to Run:
 
-2. Install dependencies: `npm install`
+2. Install dependencies: `npm install`<img width="332" alt="Screenshot 2024-11-28 at 8 08 45 PM" src="https://github.com/user-attachments/assets/98778796-0f50-4652-b4f1-d14feb7406d8">
+
 3. Run the app: `npm start`
 
 ## Screenshots:
