@@ -18,7 +18,7 @@ This is a simple weather app that fetches weather data from the OpenWeatherMap A
 You can replace the API key in the `App.js` file with your own from OpenWeatherMap.
 
 ## How to Run:
-1. Clone the repo: `git clone <repo-url>`
+
 2. Install dependencies: `npm install`
 3. Run the app: `npm start`
 
